@@ -5,7 +5,7 @@ import (
 	models2 "mlt-go/module/login/models"
 )
 
-func LoginService(login models2.Login) models.Result  {
+func Reg(reg models2.Reg) models.Result  {
 
 	return models.Result{Code: 1, Msg: "成功"}
 }
