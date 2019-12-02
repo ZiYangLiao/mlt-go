@@ -1,12 +1,14 @@
 package db
 
 import (
+	"fmt"
 	_ "github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
 	_ "github.com/lib/pq"
 )
 
-func Init() {
+func init() {
+
 	// PostgreSQL 配置
 	orm.RegisterDriver("postgres", orm.DRPostgres) // 注册驱动
 	orm.RegisterDataBase("default", "postgres", "user=postgres password=123456 dbname=mlt host=localhost port=5432 sslmode=disable")
@@ -27,10 +29,11 @@ func Init() {
 	 */
 	// 自动建表
 
-	orm.RunSyncdb("default", false, true)
+	//orm.RunSyncdb("default", false, true)
 	orm.Debug = true
 	//o := orm.NewOrm()
 	//o.Using("default")
+	fmt.Println("数据库连接成功")
 }
 
 

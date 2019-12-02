@@ -12,6 +12,8 @@ type Users struct {
 	Birthday string
     IDCard string
 	CreatDate string
+    //状态  1 正常  2 冻结  3  删除
+    Status int16
 }
 
 func init()  {

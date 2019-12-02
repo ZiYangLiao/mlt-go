@@ -20,3 +20,5 @@ func AddUserService(user models3.Users) models.Result  {
 	}
 	return result
 }
+
+
