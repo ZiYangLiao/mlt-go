@@ -11,9 +11,18 @@ type LoginCotroller struct {
 	beego.Controller
 }
 
-func (c *LoginCotroller) Login()  {
+func (c *LoginCotroller) Login() {
 	var login models.Login
 	json.Unmarshal(c.Ctx.Input.RequestBody, &login)
 	c.Data["json"] = service.LoginService(login)
+	c.ServeJSON()
+}
+
+func (c *LoginCotroller) Logout() {
+	token := c.Ctx.Input.Header("token")
+	if token == "" {
+		token = c.GetString("token")
+	}
+	c.Data["json"] = service.LogoutService(token)
 	c.ServeJSON()
 }

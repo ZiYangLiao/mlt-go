@@ -1,19 +1,19 @@
 package service
 
 import (
-	"bytes"
-	"encoding/binary"
+	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego/orm"
 	"mlt-go/common/models"
 	"mlt-go/common/utils"
 	models2 "mlt-go/module/login/models"
 	models3 "mlt-go/module/users/models"
+	"unsafe"
 )
 
 func Reg(reg models2.Reg) models.Result {
 	//验证信息
-	result := regValidate(reg);
+	result := regValidate(reg)
 	if result.Code == 0 {
 		return result
 	}
@@ -21,7 +21,7 @@ func Reg(reg models2.Reg) models.Result {
 	reg.CreatDate = utils.GetTimeNow()
 
 	//添加用户
-	var users models3.Users
+	users := new(models3.Users)
 	users.Email = reg.Email
 	users.Mobile = reg.Mobile
 	users.CreatDate = reg.CreatDate
@@ -32,7 +32,7 @@ func Reg(reg models2.Reg) models.Result {
 	users.IDCard = reg.IDCard
 	users.Status = 1
 	o := orm.NewOrm()
-	resultId, err := o.Insert(&users)
+	resultId, err := o.Insert(users)
 	if err != nil {
 		return models.Result{Code: 0, Msg: "注册失败"}
 	}
@@ -49,19 +49,27 @@ func Reg(reg models2.Reg) models.Result {
 	if err != nil {
 		fmt.Println(err)
 		o = orm.NewOrm()
-		o.Delete(&users)
+		o.Delete(users)
 		return models.Result{Code: 0, Msg: "注册失败"}
 	}
-	buf := &bytes.Buffer{}
-	err = binary.Write(buf, binary.BigEndian, users)
-	if err != nil {
-		panic(err)
+	Len := unsafe.Sizeof(*users)
+	testBytes := &models.SliceMock{
+		Addr: uintptr(unsafe.Pointer(users)),
+		Cap:  int(Len),
+		Len:  int(Len),
 	}
-	var uuid = utils.UUID()
-	fmt.Println("redis.user.key:" + utils.Token + uuid)
-	utils.SetNXRedisEXKey(utils.Token + uuid, buf.Bytes(), int64(utils.ExpireMonth))
+	data := *(*[]byte)(unsafe.Pointer(testBytes))
 
-	return models.Result{Code: 1, Msg: "成功"}
+	var uuid = utils.UUID()
+	var key = (utils.Token + uuid)
+	utils.SetRedisEXKey(fmt.Sprintf(utils.Token+"user:%d", users.Id), key, int64(utils.ExpireMonth))
+	utils.SetNXRedisEXKey(key, data, int64(utils.ExpireMonth))
+	fmt.Println("redis.user.key:" + utils.Token + uuid)
+	jsonBytes, err := json.Marshal(users)
+	m := make(map[string]interface{})
+	json.Unmarshal(jsonBytes, &m)
+	m["token"] = uuid
+	return models.Result{Code: 1, Msg: "成功", Data: m}
 }
 
 func regValidate(reg models2.Reg) models.Result {
