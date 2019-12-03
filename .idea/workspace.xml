@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8c5e9d73-ff99-4fad-a038-d922e6ad12aa" name="Default Changelist" comment="" />
+    <list default="true" id="8c5e9d73-ff99-4fad-a038-d922e6ad12aa" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/common/models/SliceMock.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/models/Result.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Result.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/utils/RedisUtils.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/RedisUtils.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/login/controller/LoginController.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/controller/LoginController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/login/loginRouters/loginRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/loginRouters/loginRouter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/login/service/LoginService.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/service/LoginService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/login/service/RegService.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/service/RegService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/users/controller/UsersController.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/users/controller/UsersController.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/users/service/UsersService.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/users/service/UsersService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/users/usersRouters/userRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/users/usersRouters/userRouter.go" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +30,13 @@
     </option>
   </component>
   <component name="GOROOT" path="E:/Go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1U8SBujYp7a2gwoESZhFszL7P7L" />
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="GO_FMT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Module.GOPATH.is.expanded" value="false" />
@@ -27,20 +44,20 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.goide.configuration.GoLibrariesConfigurableProvider" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\go\gopath\go\src\genealogy\users" />
+      <recent name="F:\go\gopath\go\src\mlt-go\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\go\gopath\go\src\genealogy\module\login\controller" />
-      <recent name="F:\go\gopath\go\src\genealogy\module" />
-      <recent name="F:\go\gopath\go\src\genealogy\common\models" />
-      <recent name="F:\go\gopath\go\src\genealogy\users\models" />
-      <recent name="F:\go\gopath\go\src\genealogy\users\controller" />
+      <recent name="F:\go\gopath\go\src\mlt-go\module\login\controller" />
+      <recent name="F:\go\gopath\go\src\mlt-go\module" />
+      <recent name="F:\go\gopath\go\src\mlt-go\common\models" />
+      <recent name="F:\go\gopath\go\src\mlt-go\users\models" />
+      <recent name="F:\go\gopath\go\src\mlt-go\users\controller" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -62,15 +79,15 @@
       <go_parameters value="-i" />
       <kind value="FILE" />
       <filePath value="$PROJECT_DIR$/" />
-      <package value="genealogy" />
+      <package value="mlt-go" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="mlt-go" />
-      <working_directory value="$PROJECT_DIR$/../mlt-go/" />
+      <working_directory value="$PROJECT_DIR$/" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/../mlt-go/main.go" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="GoTestRunConfiguration" factoryName="Go Test">
@@ -79,7 +96,7 @@
       <go_parameters value="-i" />
       <framework value="gotest" />
       <kind value="DIRECTORY" />
-      <package value="genealogy" />
+      <package value="mlt-go" />
       <directory value="$PROJECT_DIR$/" />
       <filePath value="$PROJECT_DIR$/" />
       <method v="2" />
@@ -92,6 +109,19 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VgoProject">
     <proxy>direct</proxy>
