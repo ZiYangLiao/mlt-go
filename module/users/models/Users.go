@@ -14,6 +14,8 @@ type Users struct {
 	CreatDate string
     //状态  1 正常  2 冻结  3  删除
     Status int16
+    //用户头像
+    HeadPicUrl string
 }
 
 func init()  {

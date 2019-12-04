@@ -23,6 +23,9 @@ func (c *LoginCotroller) Logout() {
 	if token == "" {
 		token = c.GetString("token")
 	}
+	if token == "" {
+		token = c.Ctx.Request.Header.Get("X-Token")
+	}
 	c.Data["json"] = service.LogoutService(token)
 	c.ServeJSON()
 }

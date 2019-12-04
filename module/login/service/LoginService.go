@@ -18,6 +18,9 @@ func LoginService(login models2.Login) models.Result {
 }
 
 func LogoutService(token string) models.Result {
+	if token == "" {
+		return models.Result{Code: 0, Msg: "退出登录失败"}
+	}
 	redisUsers := service.GetUserModel(token)
 	utils.DeleteRedisKey(fmt.Sprintf(utils.Token+"user:%d", redisUsers.Id))
 	utils.DeleteRedisKey(utils.Token + token)

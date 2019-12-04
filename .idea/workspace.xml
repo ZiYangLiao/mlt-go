@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c5e9d73-ff99-4fad-a038-d922e6ad12aa" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/common/models/SliceMock.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/models/Result.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/models/Result.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/utils/RedisUtils.go" beforeDir="false" afterPath="$PROJECT_DIR$/common/utils/RedisUtils.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/login/controller/LoginController.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/controller/LoginController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/login/loginRouters/loginRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/loginRouters/loginRouter.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/module/login/service/LoginService.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/service/LoginService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/login/service/RegService.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/login/service/RegService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/users/controller/UsersController.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/users/controller/UsersController.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/users/service/UsersService.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/users/service/UsersService.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/module/users/usersRouters/userRouter.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/users/usersRouters/userRouter.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module/users/models/Users.go" beforeDir="false" afterPath="$PROJECT_DIR$/module/users/models/Users.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,6 +114,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="注册，登录，退出登录功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="注册，登录，退出登录功能" />
   </component>
   <component name="VgoProject">
     <proxy>direct</proxy>
